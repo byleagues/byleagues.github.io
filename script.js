@@ -5,7 +5,7 @@ const profileStatusDot = document.querySelector("[data-profile-status-dot]");
 const profileStatusText = document.querySelector("[data-profile-status-text]");
 const particleCanvas = document.querySelector("#particleCanvas");
 const interactiveCards = document.querySelectorAll(
-  ".hero-card, .hero-metrics article, .about-card, .experience-card, .service-card, .timeline-item, .footer-actions"
+  ".hero-specialties article, .about-card, .experience-card, .service-card, .timeline-item, .footer-actions"
 );
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
