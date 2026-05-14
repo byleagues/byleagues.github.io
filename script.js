@@ -1,6 +1,4 @@
 const revealItems = document.querySelectorAll(".reveal");
-const liveDate = document.querySelector("[data-live-date]");
-const liveTime = document.querySelector("[data-live-time]");
 const profileStatusDot = document.querySelector("[data-profile-status-dot]");
 const profileStatusText = document.querySelector("[data-profile-status-text]");
 const particleCanvas = document.querySelector("#particleCanvas");
@@ -171,29 +169,6 @@ const setupParticleNetwork = () => {
   window.addEventListener("touchend", clearMouse);
   window.addEventListener("pagehide", () => window.cancelAnimationFrame(animationId));
 };
-
-const updateLiveClock = () => {
-  if (!liveDate || !liveTime) {
-    return;
-  }
-
-  const now = new Date();
-  liveDate.textContent = new Intl.DateTimeFormat("tr-TR", {
-    day: "2-digit",
-    month: "long",
-    weekday: "short",
-    timeZone: "Europe/Istanbul"
-  }).format(now);
-  liveTime.textContent = new Intl.DateTimeFormat("tr-TR", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZone: "Europe/Istanbul"
-  }).format(now);
-};
-
-updateLiveClock();
-window.setInterval(updateLiveClock, 1000);
 
 const updateProfileStatus = () => {
   if (!profileStatusDot || !profileStatusText) {
