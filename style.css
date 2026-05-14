@@ -367,39 +367,6 @@ h6 {
   text-shadow: 0 0 14px rgba(0, 240, 168, 0.24);
 }
 
-.corner-clock {
-  position: fixed;
-  right: 24px;
-  bottom: 18px;
-  z-index: 35;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  color: rgba(234, 255, 242, 0.82);
-  pointer-events: none;
-  text-shadow:
-    0 0 14px rgba(124, 255, 178, 0.2),
-    0 8px 20px rgba(0, 0, 0, 0.32);
-}
-
-.corner-clock span {
-  color: rgba(174, 251, 204, 0.68);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.corner-clock strong {
-  color: rgba(239, 255, 246, 0.9);
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1;
-}
-
 .nav-cta,
 .button {
   display: inline-flex;
@@ -499,6 +466,7 @@ h6 {
   font-family: "Archivo Black", "Montserrat", sans-serif;
   font-weight: 400;
   letter-spacing: 0.18em;
+  color: #f3fff8;
 }
 
 .hero h1,
@@ -2472,11 +2440,6 @@ h6 {
     white-space: nowrap;
   }
 
-  .corner-clock {
-    right: 18px;
-    bottom: 14px;
-  }
-
   .hero {
     min-height: auto;
     padding-top: 36px;
@@ -2580,20 +2543,6 @@ h6 {
   .nav {
     gap: 18px;
     font-size: 0.9rem;
-  }
-
-  .corner-clock {
-    right: 16px;
-    bottom: 12px;
-    gap: 8px;
-  }
-
-  .corner-clock span {
-    font-size: 0.58rem;
-  }
-
-  .corner-clock strong {
-    font-size: 0.78rem;
   }
 
   .section-heading .eyebrow,
