@@ -10,7 +10,7 @@ const interactiveCards = document.querySelectorAll(
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const setupParticleNetwork = () => {
-  if (!particleCanvas || prefersReducedMotion.matches) {
+  if (!particleCanvas) {
     return;
   }
 
@@ -27,12 +27,14 @@ const setupParticleNetwork = () => {
     radius: 180
   };
 
+  const isReducedMotion = prefersReducedMotion.matches;
+
   const settings = {
-    desktopCount: 76,
-    mobileCount: 42,
+    desktopCount: isReducedMotion ? 48 : 76,
+    mobileCount: isReducedMotion ? 30 : 42,
     maxDistance: 122,
     particleRadius: 2.25,
-    speed: 0.34,
+    speed: isReducedMotion ? 0.14 : 0.34,
     lineColor: "124, 255, 178",
     mouseLineColor: "124, 255, 178",
     dotColor: "226, 255, 238"
