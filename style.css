@@ -481,8 +481,9 @@ h6 {
 .hero {
   display: block;
   text-align: center;
-  min-height: calc(100vh - 120px);
-  padding-top: clamp(70px, 9vw, 118px);
+  min-height: auto;
+  padding-top: clamp(58px, 7vw, 92px);
+  padding-bottom: clamp(84px, 8vw, 118px);
 }
 
 .eyebrow {
@@ -505,20 +506,19 @@ h6 {
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: 16ch;
   margin-inline: auto;
   font-family: "Archivo Black", "Montserrat", sans-serif;
-  font-size: clamp(3.8rem, 10vw, 8.8rem);
-  letter-spacing: -0.055em;
+  font-size: clamp(2.65rem, 5.55vw, 5.55rem);
+  letter-spacing: -0.035em;
+  line-height: 1.04;
   text-transform: uppercase;
 }
 
 .hero h1 span {
-  color: var(--accent);
+  color: inherit;
   font-style: normal;
-  text-shadow:
-    0 0 18px rgba(124, 255, 178, 0.24),
-    0 0 42px rgba(124, 255, 178, 0.1);
+  text-shadow: none;
 }
 
 .hero-text {
@@ -547,7 +547,6 @@ h6 {
 
 .hero-specialties article,
 .about-card,
-.service-card,
 .timeline-item,
 .footer-actions,
 .hero-card,
@@ -563,7 +562,6 @@ h6 {
 
 .hero-specialties article,
 .about-card,
-.service-card,
 .timeline-item,
 .footer-actions,
 .hero-card,
@@ -596,7 +594,6 @@ h6 {
 
 .hero-specialties article > *,
 .about-card > *,
-.service-card > *,
 .timeline-item > *,
 .footer-actions > *,
 .hero-card > *,
@@ -607,7 +604,6 @@ h6 {
 
 .hero-specialties article h3,
 .about-card h3,
-.service-card h3,
 .timeline-item h3,
 .experience-card h3 {
   transition:
@@ -618,7 +614,6 @@ h6 {
 
 .hero-specialties article:hover h3,
 .about-card:hover h3,
-.service-card:hover h3,
 .timeline-item:hover h3,
 .experience-card:hover h3 {
   color: #f5fff8;
@@ -626,7 +621,6 @@ h6 {
   transform: translateY(-1px);
 }
 
-.service-card span,
 .timeline-item span,
 .experience-label {
   transition:
@@ -635,7 +629,6 @@ h6 {
     background 260ms ease;
 }
 
-.service-card:hover span,
 .timeline-item:hover span,
 .experience-card:hover .experience-label {
   color: #baffd5;
@@ -644,7 +637,6 @@ h6 {
 
 .hero-specialties article::before,
 .about-card::before,
-.service-card::before,
 .timeline-item::before,
 .footer-actions::before,
 .hero-card::before,
@@ -675,7 +667,6 @@ h6 {
 
 .hero-specialties article::after,
 .about-card::after,
-.service-card::after,
 .timeline-item::after,
 .footer-actions::after,
 .hero-card::after,
@@ -704,8 +695,6 @@ h6 {
 .hero-specialties article.is-active,
 .about-card:hover,
 .about-card.is-active,
-.service-card:hover,
-.service-card.is-active,
 .timeline-item:hover,
 .timeline-item.is-active,
 .footer-actions:hover,
@@ -728,8 +717,6 @@ h6 {
 .hero-specialties article.is-active::before,
 .about-card:hover::before,
 .about-card.is-active::before,
-.service-card:hover::before,
-.service-card.is-active::before,
 .timeline-item:hover::before,
 .timeline-item.is-active::before,
 .footer-actions:hover::before,
@@ -755,8 +742,6 @@ h6 {
 .hero-specialties article.is-active::after,
 .about-card:hover::after,
 .about-card.is-active::after,
-.service-card:hover::after,
-.service-card.is-active::after,
 .timeline-item:hover::after,
 .timeline-item.is-active::after,
 .footer-actions:hover::after,
@@ -1181,8 +1166,7 @@ h6 {
   line-height: 1.55;
 }
 
-.about-grid,
-.service-grid {
+.about-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
@@ -1193,7 +1177,6 @@ h6 {
 }
 
 .about-card,
-.service-card,
 .timeline-item,
 .footer-actions {
   --inner-radius: calc(var(--radius) - 4px);
@@ -1203,7 +1186,6 @@ h6 {
 
 .about-card p,
 .project-copy p,
-.service-card p,
 .timeline-item p,
 .footer p {
   margin: 0;
@@ -1627,7 +1609,6 @@ h6 {
 }
 
 .project-type,
-.service-card span,
 .timeline-item span {
   display: inline-flex;
   margin-bottom: 10px;
@@ -1639,7 +1620,6 @@ h6 {
 }
 
 .project-copy h3,
-.service-card h3,
 .timeline-item h3 {
   margin: 0 0 10px;
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
@@ -1649,14 +1629,9 @@ h6 {
 
 .about-card p,
 .project-copy p,
-.service-card p,
 .timeline-item p {
   font-size: 0.9rem;
   line-height: 1.58;
-}
-
-.service-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .timeline {
@@ -2378,7 +2353,7 @@ h6 {
   .hero,
   .footer,
   .about-grid,
-  .service-grid {
+  .process-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2669,7 +2644,6 @@ h6 {
 
   .hero-specialties article,
   .about-card,
-  .service-card,
   .timeline-item,
   .footer-actions,
   .hero-card,
@@ -2684,7 +2658,6 @@ h6 {
 
   .hero-specialties article::after,
   .about-card::after,
-  .service-card::after,
   .timeline-item::after,
   .footer-actions::after,
   .hero-card::after,
@@ -2694,7 +2667,6 @@ h6 {
 
   .hero-specialties article::before,
   .about-card::before,
-  .service-card::before,
   .timeline-item::before,
   .footer-actions::before,
   .hero-card::before,
@@ -2704,7 +2676,6 @@ h6 {
 
   .hero-specialties article::before,
   .about-card::before,
-  .service-card::before,
   .timeline-item::before,
   .footer-actions::before,
   .hero-card::before,
