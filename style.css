@@ -1,12 +1,12 @@
 :root {
-  --bg: #0f172a;
-  --surface: #1e293b;
+  --bg: #0F172A;
+  --surface: #1E293B;
   --surface-soft: rgba(30, 41, 59, 0.78);
-  --surface-strong: #1e293b;
-  --primary: #38bdf8;
-  --primary-hover: #0ea5e9;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
+  --surface-strong: #1E293B;
+  --primary: #38BDF8;
+  --primary-hover: #0EA5E9;
+  --text: #E2E8F0;
+  --muted: #94A3B8;
   --border: #334155;
   --border-soft: rgba(51, 65, 85, 0.82);
   --shadow: 0 24px 70px rgba(2, 6, 23, 0.38);
@@ -32,11 +32,11 @@ body {
   overflow-x: hidden;
   color: var(--text);
   background:
-    radial-gradient(circle at 50% -12%, rgba(56, 189, 248, 0.18), transparent 31%),
-    radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.095), transparent 27%),
-    radial-gradient(circle at 86% 10%, rgba(56, 189, 248, 0.07), transparent 24%),
+    radial-gradient(circle at 50% -14%, rgba(56, 189, 248, 0.13), transparent 30%),
+    radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.06), transparent 27%),
+    radial-gradient(circle at 86% 10%, rgba(56, 189, 248, 0.045), transparent 24%),
     var(--bg);
-  font-family: "Inter", "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
@@ -77,7 +77,7 @@ svg {
   inset: 0;
   z-index: -4;
   pointer-events: none;
-  opacity: 0.34;
+  opacity: 0.22;
   background-image:
     linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
@@ -95,7 +95,7 @@ svg {
   height: min(900px, 90vw);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.16;
+  opacity: 0.11;
   transform: translateX(-50%);
   background: radial-gradient(circle, rgba(56, 189, 248, 0.38), transparent 58%);
   filter: blur(22px);
@@ -107,7 +107,7 @@ svg {
   z-index: -2;
   width: 100vw;
   height: 100vh;
-  opacity: 0.24;
+  opacity: 0.12;
   pointer-events: none;
 }
 
@@ -119,7 +119,7 @@ svg {
   border-radius: 50%;
   pointer-events: none;
   filter: blur(80px);
-  opacity: 0.28;
+  opacity: 0.18;
   animation: floatAmbient 16s var(--ease) infinite alternate;
 }
 
@@ -142,7 +142,7 @@ svg {
   height: 150px;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.08;
 }
 
 .corner-neon::before,
@@ -188,21 +188,21 @@ svg {
 
 .topbar {
   position: sticky;
-  top: 16px;
+  top: 14px;
   z-index: 20;
   width: var(--container);
-  min-height: 72px;
+  min-height: 68px;
   margin: 16px auto 0;
   padding: 12px 14px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 22px;
   align-items: center;
-  border: 1px solid rgba(51, 65, 85, 0.88);
+  border: 1px solid rgba(51, 65, 85, 0.78);
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.82);
+  background: rgba(15, 23, 42, 0.7);
   box-shadow: 0 18px 54px rgba(2, 6, 23, 0.32), inset 0 1px 0 rgba(226, 232, 240, 0.035);
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(12px);
 }
 
 .brand {
@@ -233,8 +233,8 @@ svg {
 .brand-text {
   color: #f8fafc;
   font-size: 0.98rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 750;
+  letter-spacing: -0.025em;
 }
 
 .nav {
@@ -289,8 +289,8 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 48px;
-  padding: 0 20px;
+  min-height: 46px;
+  padding: 0 18px;
   border: 1px solid rgba(56, 189, 248, 0.32);
   border-radius: 999px;
   color: #e0f2fe;
@@ -300,7 +300,7 @@ svg {
   box-shadow: inset 0 1px 0 rgba(226, 232, 240, 0.1), 0 14px 34px rgba(14, 165, 233, 0.12);
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 750;
+  font-weight: 700;
   transition: transform 180ms var(--ease), border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
@@ -463,7 +463,7 @@ svg {
 .section {
   width: var(--container);
   margin: 0 auto;
-  padding: 104px 0;
+  padding: 96px 0;
 }
 
 .hero {
@@ -472,7 +472,7 @@ svg {
   display: grid;
   place-items: center;
   text-align: center;
-  padding-top: 92px;
+  padding-top: 84px;
 }
 
 .hero::before {
@@ -482,13 +482,13 @@ svg {
   left: 50%;
   z-index: -1;
   width: min(920px, 92vw);
-  height: 520px;
+  height: 440px;
   transform: translateX(-50%);
-  opacity: 0.78;
+  opacity: 0.54;
   background:
     radial-gradient(circle at 50% 36%, rgba(56, 189, 248, 0.2), transparent 45%),
     radial-gradient(circle at 22% 72%, rgba(14, 165, 233, 0.1), transparent 35%);
-  filter: blur(8px);
+  filter: blur(14px);
   pointer-events: none;
 }
 
@@ -507,9 +507,9 @@ svg {
   border-radius: 999px;
   color: var(--primary);
   background: rgba(56, 189, 248, 0.08);
-  font-size: 0.73rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   line-height: 1.15;
   text-transform: uppercase;
 }
@@ -519,17 +519,17 @@ svg {
 .footer-copy h2 {
   margin: 0;
   color: #f8fafc;
-  font-family: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.06em;
-  line-height: 0.98;
+  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.052em;
+  line-height: 1.02;
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: 14ch;
   margin: 0 auto;
-  font-size: clamp(4.8rem, 10.8vw, 9.8rem);
-  font-weight: 800;
-  letter-spacing: -0.075em;
+  font-size: clamp(3.9rem, 8vw, 7.35rem);
+  font-weight: 700;
+  letter-spacing: -0.058em;
 }
 
 .hero h1 span {
@@ -538,15 +538,15 @@ svg {
 }
 
 .hero-text {
-  max-width: 820px;
-  margin: 30px auto 0;
+  max-width: 760px;
+  margin: 26px auto 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.45vw, 1.22rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 1.22vw, 1.12rem);
+  line-height: 1.7;
 }
 
 .hero-actions {
-  margin-top: 40px;
+  margin-top: 34px;
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -576,7 +576,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 62px;
+  margin-top: 54px;
   text-align: left;
 }
 
@@ -592,10 +592,10 @@ svg {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, rgba(226, 232, 240, 0.04), transparent 40%),
-    var(--surface-soft);
+    linear-gradient(180deg, rgba(226, 232, 240, 0.035), transparent 42%),
+    var(--surface);
   box-shadow:
-    0 18px 54px rgba(2, 6, 23, 0.28),
+    0 16px 48px rgba(2, 6, 23, 0.24),
     inset 0 1px 0 rgba(226, 232, 240, 0.035);
   transform:
     perspective(1100px)
@@ -666,15 +666,15 @@ svg {
 .hero-card.is-active,
 .experience-card:hover,
 .experience-card.is-active {
-  --lift-y: -5px;
-  --hover-scale: 1.008;
+  --lift-y: -4px;
+  --hover-scale: 1.006;
   border-color: rgba(56, 189, 248, 0.46);
   background:
     linear-gradient(180deg, rgba(226, 232, 240, 0.06), transparent 42%),
-    rgba(30, 41, 59, 0.9);
+    #1E293B;
   box-shadow:
-    0 24px 68px rgba(2, 6, 23, 0.36),
-    0 0 38px rgba(56, 189, 248, 0.11),
+    0 22px 62px rgba(2, 6, 23, 0.34),
+    0 0 30px rgba(56, 189, 248, 0.09),
     inset 0 1px 0 rgba(226, 232, 240, 0.055);
 }
 
@@ -721,7 +721,7 @@ svg {
   color: var(--primary);
   background: rgba(56, 189, 248, 0.08);
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hero-specialties h3,
@@ -730,8 +730,9 @@ svg {
 .experience-card h3 {
   margin: 0;
   color: var(--text);
-  font-family: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.035em;
+  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.032em;
 }
 
 .hero-specialties h3 {
@@ -770,12 +771,13 @@ svg {
 
 .section-heading {
   max-width: 860px;
-  margin: 0 auto 50px;
+  margin: 0 auto 46px;
   text-align: center;
 }
 
 .section-heading h2 {
-  font-size: clamp(2.3rem, 5.4vw, 5.4rem);
+  font-size: clamp(2.15rem, 4.3vw, 4.25rem);
+  font-weight: 700;
 }
 
 .section-lead {
@@ -845,10 +847,11 @@ svg {
 .profile-content h3 {
   margin: 0;
   color: #f8fafc;
-  font-family: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  letter-spacing: -0.06em;
-  line-height: 1;
+  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.052em;
+  line-height: 1.04;
 }
 
 .profile-location {
@@ -922,7 +925,96 @@ svg {
 .experience-card {
   width: min(100%, 520px);
   min-height: 188px;
-  padding: 28px;
+  padding: 18px 18px 26px;
+}
+
+.project-preview {
+  position: relative;
+  height: 112px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(51, 65, 85, 0.88);
+  border-radius: 18px;
+  background:
+    linear-gradient(120deg, rgba(56, 189, 248, 0.16), transparent 38%),
+    radial-gradient(circle at 74% 22%, rgba(56, 189, 248, 0.2), transparent 20%),
+    #0f172a;
+  box-shadow: inset 0 1px 0 rgba(226, 232, 240, 0.04);
+}
+
+.project-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.project-preview::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), rgba(56, 189, 248, 0.16));
+  opacity: 0.75;
+}
+
+.project-preview span {
+  position: absolute;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  background: rgba(30, 41, 59, 0.78);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.22);
+}
+
+.project-preview span:nth-child(1) {
+  top: 18px;
+  left: 18px;
+  width: 46%;
+  height: 42px;
+}
+
+.project-preview span:nth-child(2) {
+  top: 18px;
+  right: 18px;
+  width: 28%;
+  height: 24px;
+}
+
+.project-preview span:nth-child(3) {
+  left: 18px;
+  bottom: 34px;
+  width: 64%;
+  height: 18px;
+  opacity: 0.78;
+}
+
+.experience-card:nth-child(2) .project-preview {
+  background:
+    linear-gradient(120deg, rgba(56, 189, 248, 0.12), transparent 38%),
+    radial-gradient(circle at 76% 22%, rgba(125, 211, 252, 0.18), transparent 22%),
+    #0f172a;
+}
+
+.experience-card:nth-child(3) .project-preview {
+  background:
+    linear-gradient(120deg, rgba(14, 165, 233, 0.14), transparent 38%),
+    radial-gradient(circle at 26% 28%, rgba(56, 189, 248, 0.18), transparent 22%),
+    #0f172a;
+}
+
+.experience-card:nth-child(4) .project-preview {
+  background:
+    linear-gradient(120deg, rgba(56, 189, 248, 0.11), transparent 38%),
+    radial-gradient(circle at 68% 30%, rgba(14, 165, 233, 0.16), transparent 24%),
+    #0f172a;
 }
 
 .experience-card:nth-child(odd) {
@@ -968,14 +1060,14 @@ svg {
   color: var(--primary);
   background: rgba(56, 189, 248, 0.08);
   font-size: 0.68rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .experience-card h3 {
   margin-bottom: 12px;
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-size: clamp(1.35rem, 2.1vw, 1.72rem);
 }
 
 .experience-card p,
@@ -1013,7 +1105,7 @@ svg {
 
 .timeline-item h3 {
   margin-bottom: 10px;
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-size: clamp(1.32rem, 2.2vw, 1.8rem);
 }
 
 .site-footer {
@@ -1106,7 +1198,7 @@ svg {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--primary);
   color: #f8fafc;
-  font-family: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
   font-size: 1.28rem;
   letter-spacing: -0.04em;
 }
@@ -1160,7 +1252,7 @@ svg {
 
 .footer-bottom a {
   color: var(--primary);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .legacy-footer,
@@ -1270,7 +1362,7 @@ svg {
   }
 
   .section {
-    padding: 84px 0;
+    padding: 78px 0;
   }
 
   .hero {
@@ -1279,7 +1371,7 @@ svg {
   }
 
   .hero h1 {
-    font-size: clamp(3.25rem, 17vw, 5.4rem);
+    font-size: clamp(3rem, 13.8vw, 4.75rem);
   }
 
   .hero-specialties {
@@ -1288,7 +1380,11 @@ svg {
   }
 
   .section-heading h2 {
-    font-size: clamp(2.2rem, 11vw, 3.6rem);
+    font-size: clamp(2rem, 9.5vw, 3.25rem);
+  }
+
+  .project-preview {
+    height: 96px;
   }
 
   .about-profile-card {
