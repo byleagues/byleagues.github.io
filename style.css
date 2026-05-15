@@ -798,21 +798,32 @@ h6 {
   content: "";
   position: absolute;
   z-index: 0;
-  top: 50%;
-  left: 50%;
-  width: min(48%, 180px);
-  aspect-ratio: 1;
-  border-radius: 999px;
+  inset: 0;
+  border-radius: inherit;
   background:
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.18), transparent 20%),
-    linear-gradient(135deg, var(--card-blob-color), var(--card-blob-color-2));
-  opacity: 0.56;
-  filter: blur(16px);
-  transform: translate(-100%, -100%);
-  animation: cardBlobBounce 6.2s infinite ease;
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 42deg,
+      rgba(0, 240, 168, 0.1) 58deg,
+      rgba(124, 255, 178, 0.92) 74deg,
+      rgba(58, 144, 255, 0.42) 92deg,
+      transparent 118deg,
+      transparent 198deg,
+      rgba(124, 255, 178, 0.42) 222deg,
+      rgba(0, 240, 168, 0.86) 242deg,
+      rgba(58, 144, 255, 0.22) 260deg,
+      transparent 292deg,
+      transparent 360deg
+    );
+  opacity: 0.68;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 168, 0.2));
+  transform: rotate(0deg);
+  animation: cardBorderOrbit 4.6s linear infinite;
   transition:
     opacity 500ms ease,
-    filter 500ms ease;
+    filter 500ms ease,
+    animation-duration 500ms ease;
   pointer-events: none;
 }
 
@@ -875,29 +886,16 @@ h6 {
 .hero-card.is-active::after,
 .experience-card:hover::after,
 .experience-card.is-active::after {
-  opacity: 0.72;
-  filter: blur(18px);
+  opacity: 0.95;
+  filter:
+    drop-shadow(0 0 12px rgba(0, 240, 168, 0.34))
+    drop-shadow(0 0 22px rgba(58, 144, 255, 0.12));
+  animation-duration: 2.8s;
 }
 
-@keyframes cardBlobBounce {
-  0% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: translate(-100%, -100%) translate3d(115%, 0, 0);
-  }
-
-  50% {
-    transform: translate(-100%, -100%) translate3d(115%, 115%, 0);
-  }
-
-  75% {
-    transform: translate(-100%, -100%) translate3d(0, 115%, 0);
-  }
-
-  100% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+@keyframes cardBorderOrbit {
+  to {
+    transform: rotate(1turn);
   }
 }
 
