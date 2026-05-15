@@ -33,9 +33,9 @@ const setupParticleNetwork = () => {
     maxDistance: 122,
     particleRadius: 2.25,
     speed: isReducedMotion ? 0.14 : 0.34,
-    lineColor: "124, 255, 178",
-    mouseLineColor: "124, 255, 178",
-    dotColor: "226, 255, 238"
+    lineColor: "56, 189, 248",
+    mouseLineColor: "14, 165, 233",
+    dotColor: "226, 232, 240"
   };
 
   class Particle {
