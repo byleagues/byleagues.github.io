@@ -2,10 +2,61 @@ const revealItems = document.querySelectorAll(".reveal");
 const profileStatusDot = document.querySelector("[data-profile-status-dot]");
 const profileStatusText = document.querySelector("[data-profile-status-text]");
 const particleCanvas = document.querySelector("#particleCanvas");
+const terminalOutput = document.querySelector("[data-terminal-output]");
 const interactiveCards = document.querySelectorAll(
   ".hero-specialties article, .about-card, .experience-card, .timeline-item, .footer-actions"
 );
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+const setupHeroTerminal = () => {
+  if (!terminalOutput) {
+    return;
+  }
+
+  const terminalCard = terminalOutput.closest(".hero-terminal");
+  const lines = [
+    "> initializing projects...",
+    "> loading minecraft systems...",
+    "> building server experiences...",
+    "> done."
+  ];
+
+  if (prefersReducedMotion.matches) {
+    terminalOutput.textContent = lines.join("\n");
+    terminalCard?.classList.add("is-complete");
+    return;
+  }
+
+  let lineIndex = 0;
+  let charIndex = 0;
+  let rendered = "";
+
+  const typeNext = () => {
+    const currentLine = lines[lineIndex];
+
+    if (!currentLine) {
+      terminalCard?.classList.add("is-complete");
+      return;
+    }
+
+    rendered += currentLine.charAt(charIndex);
+    terminalOutput.textContent = rendered;
+    charIndex += 1;
+
+    if (charIndex <= currentLine.length) {
+      const jitter = Math.floor(Math.random() * 22);
+      window.setTimeout(typeNext, 32 + jitter);
+      return;
+    }
+
+    rendered += lineIndex === lines.length - 1 ? "" : "\n";
+    lineIndex += 1;
+    charIndex = 0;
+    window.setTimeout(typeNext, lineIndex === lines.length ? 260 : 520);
+  };
+
+  window.setTimeout(typeNext, 520);
+};
 
 const setupParticleNetwork = () => {
   if (!particleCanvas) {
@@ -183,6 +234,7 @@ const updateProfileStatus = () => {
 };
 
 updateProfileStatus();
+setupHeroTerminal();
 setupParticleNetwork();
 
 const observer = new IntersectionObserver(
