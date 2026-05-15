@@ -11,7 +11,7 @@
   --border-soft: rgba(51, 65, 85, 0.82);
   --shadow: 0 24px 70px rgba(2, 6, 23, 0.38);
   --glow: 0 0 42px rgba(56, 189, 248, 0.18);
-  --container: min(1120px, calc(100% - 40px));
+  --container: min(100% - 32px, 1150px);
   --radius-xl: 30px;
   --radius-lg: 24px;
   --radius-md: 16px;
@@ -31,14 +31,24 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--text);
-  background:
-    radial-gradient(circle at 50% -14%, rgba(56, 189, 248, 0.13), transparent 30%),
-    radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.06), transparent 27%),
-    radial-gradient(circle at 86% 10%, rgba(56, 189, 248, 0.045), transparent 24%),
-    var(--bg);
-  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0F172A;
+  font-family: "Inter", "Manrope", system-ui, sans-serif;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+p {
+  color: #94A3B8;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 body::selection {
@@ -188,21 +198,22 @@ svg {
 
 .topbar {
   position: sticky;
-  top: 14px;
-  z-index: 20;
-  width: var(--container);
+  top: 0;
+  z-index: 50;
+  width: 100%;
   min-height: 68px;
-  margin: 16px auto 0;
-  padding: 12px 14px;
+  margin: 0;
+  padding: 12px max(16px, calc((100% - 1150px) / 2));
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 22px;
   align-items: center;
-  border: 1px solid rgba(51, 65, 85, 0.78);
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.7);
-  box-shadow: 0 18px 54px rgba(2, 6, 23, 0.32), inset 0 1px 0 rgba(226, 232, 240, 0.035);
-  backdrop-filter: blur(12px);
+  border: 0;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 0;
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -233,7 +244,7 @@ svg {
 .brand-text {
   color: #f8fafc;
   font-size: 0.98rem;
-  font-weight: 750;
+  font-weight: 700;
   letter-spacing: -0.025em;
 }
 
@@ -463,7 +474,7 @@ svg {
 .section {
   width: var(--container);
   margin: 0 auto;
-  padding: 96px 0;
+  padding-block: clamp(72px, 10vw, 120px);
 }
 
 .hero {
@@ -478,18 +489,18 @@ svg {
 .hero::before {
   content: "";
   position: absolute;
-  top: 6%;
-  left: 50%;
-  z-index: -1;
-  width: min(920px, 92vw);
-  height: 440px;
-  transform: translateX(-50%);
-  opacity: 0.54;
-  background:
-    radial-gradient(circle at 50% 36%, rgba(56, 189, 248, 0.2), transparent 45%),
-    radial-gradient(circle at 22% 72%, rgba(14, 165, 233, 0.1), transparent 35%);
-  filter: blur(14px);
+  width: 420px;
+  height: 420px;
+  background: rgba(56, 189, 248, 0.18);
+  filter: blur(120px);
+  border-radius: 999px;
+  top: 80px;
+  right: 10%;
   pointer-events: none;
+  left: auto;
+  z-index: -1;
+  transform: none;
+  opacity: 1;
 }
 
 .hero-copy {
@@ -519,17 +530,19 @@ svg {
 .footer-copy h2 {
   margin: 0;
   color: #f8fafc;
-  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.052em;
-  line-height: 1.02;
+  font-family: "Inter", "Manrope", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 .hero h1 {
-  max-width: 14ch;
+  max-width: 780px;
   margin: 0 auto;
-  font-size: clamp(3.9rem, 8vw, 7.35rem);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
   font-weight: 700;
-  letter-spacing: -0.058em;
 }
 
 .hero h1 span {
@@ -538,11 +551,11 @@ svg {
 }
 
 .hero-text {
-  max-width: 760px;
+  max-width: 640px;
   margin: 26px auto 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.22vw, 1.12rem);
-  line-height: 1.7;
+  color: #94A3B8;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -554,22 +567,26 @@ svg {
 }
 
 .button-primary {
-  color: #06121f;
-  background:
-    linear-gradient(180deg, #bae6fd 0%, var(--primary) 42%, var(--primary-hover) 100%);
-  border-color: rgba(125, 211, 252, 0.9);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    0 18px 54px rgba(14, 165, 233, 0.32);
+  background: #38BDF8;
+  color: #020617;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button-primary:hover {
+  background: #0EA5E9;
+  transform: translateY(-2px);
 }
 
 .button-secondary {
-  color: var(--text);
-  background:
-    linear-gradient(180deg, rgba(226, 232, 240, 0.045), transparent),
-    rgba(30, 41, 59, 0.72);
-  border-color: rgba(51, 65, 85, 0.96);
-  box-shadow: inset 0 1px 0 rgba(226, 232, 240, 0.04);
+  border: 1px solid #334155;
+  color: #E2E8F0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-specialties {
@@ -589,14 +606,10 @@ svg {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, rgba(226, 232, 240, 0.035), transparent 42%),
-    var(--surface);
-  box-shadow:
-    0 16px 48px rgba(2, 6, 23, 0.24),
-    inset 0 1px 0 rgba(226, 232, 240, 0.035);
+  background: rgba(30, 41, 59, 0.72);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.25);
   transform:
     perspective(1100px)
     rotateX(var(--rotate-x, 0deg))
@@ -605,10 +618,9 @@ svg {
     scale(var(--hover-scale, 1));
   transform-style: preserve-3d;
   transition:
-    transform 260ms var(--ease),
-    border-color 260ms ease,
-    background 260ms ease,
-    box-shadow 260ms ease;
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .hero-specialties article::before,
@@ -667,15 +679,9 @@ svg {
 .experience-card:hover,
 .experience-card.is-active {
   --lift-y: -4px;
-  --hover-scale: 1.006;
-  border-color: rgba(56, 189, 248, 0.46);
-  background:
-    linear-gradient(180deg, rgba(226, 232, 240, 0.06), transparent 42%),
-    #1E293B;
-  box-shadow:
-    0 22px 62px rgba(2, 6, 23, 0.34),
-    0 0 30px rgba(56, 189, 248, 0.09),
-    inset 0 1px 0 rgba(226, 232, 240, 0.055);
+  --hover-scale: 1;
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 28px 90px rgba(56, 189, 248, 0.10);
 }
 
 .hero-specialties article:hover::before,
@@ -730,9 +736,10 @@ svg {
 .experience-card h3 {
   margin: 0;
   color: var(--text);
-  font-family: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Inter", "Manrope", system-ui, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.032em;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 .hero-specialties h3 {
@@ -764,7 +771,7 @@ svg {
 .marquee-track span {
   color: rgba(148, 163, 184, 0.8);
   font-size: 0.8rem;
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -776,14 +783,18 @@ svg {
 }
 
 .section-heading h2 {
-  font-size: clamp(2.15rem, 4.3vw, 4.25rem);
+  max-width: 760px;
+  margin-inline: auto;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
   font-weight: 700;
 }
 
 .section-lead {
-  max-width: 820px;
+  max-width: 620px;
   margin: 20px auto 0;
-  color: var(--muted);
+  color: #94A3B8;
   font-size: 1rem;
   line-height: 1.75;
 }
@@ -1150,7 +1161,7 @@ svg {
   align-items: center;
   gap: 10px;
   color: #f8fafc;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .footer-brand-icon {
@@ -1333,8 +1344,8 @@ svg {
   }
 
   .topbar {
-    top: 10px;
-    margin-top: 10px;
+    top: 0;
+    margin-top: 0;
     padding: 12px;
   }
 
