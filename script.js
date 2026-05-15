@@ -28,11 +28,11 @@ const setupParticleNetwork = () => {
   const isReducedMotion = prefersReducedMotion.matches;
 
   const settings = {
-    desktopCount: isReducedMotion ? 48 : 76,
-    mobileCount: isReducedMotion ? 30 : 42,
-    maxDistance: 122,
-    particleRadius: 2.25,
-    speed: isReducedMotion ? 0.14 : 0.34,
+    desktopCount: isReducedMotion ? 34 : 58,
+    mobileCount: isReducedMotion ? 22 : 30,
+    maxDistance: 112,
+    particleRadius: 1.9,
+    speed: isReducedMotion ? 0.1 : 0.24,
     lineColor: "56, 189, 248",
     mouseLineColor: "14, 165, 233",
     dotColor: "226, 232, 240"
