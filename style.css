@@ -928,6 +928,12 @@ svg {
   font-weight: 700;
 }
 
+.process-title {
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .section-lead {
   max-width: 620px;
   margin: 20px auto 0;
