@@ -1329,6 +1329,11 @@ svg {
   backdrop-filter: blur(18px);
 }
 
+.process .footer-contact-panel {
+  width: 100%;
+  margin-top: 28px;
+}
+
 .contact-form-copy h2 {
   max-width: 520px;
   margin: 10px 0 12px;
