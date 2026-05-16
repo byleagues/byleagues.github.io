@@ -1379,6 +1379,10 @@ svg {
   gap: 18px;
 }
 
+.form-container .botcheck {
+  display: none;
+}
+
 .form-container .form-group {
   display: flex;
   flex-direction: column;
