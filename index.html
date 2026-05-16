@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="style.css?v=20260516-4">
+  <link rel="stylesheet" href="style.css?v=20260516-5">
 </head>
 <body>
   <div class="site-shell">
@@ -39,7 +39,7 @@
         <a class="nav-link" href="#about">Profil</a>
         <a class="nav-link" href="#experience">Yer Aldığım Projeler</a>
         <a class="nav-link" href="#process">Çalışma Süreci</a>
-        <a class="nav-link" href="#contact">İletişim</a>
+        <a class="nav-link" href="#quick-contact">Hızlı İletişim</a>
       </nav>
 
       <div class="nav-social-menu">
@@ -327,6 +327,44 @@
             </div>
           </article>
         </div>
+
+        <div class="footer-contact-panel reveal" id="quick-contact">
+          <div class="contact-form-copy">
+            <p class="eyebrow">Hızlı İletişim</p>
+            <h2>Birlikte çalışmak ister misin?</h2>
+            <p>
+              Projeni ya da yorumunu kısaca gönder. Dönüş yapabilmem için mail adresini
+              yazman yeterli.
+            </p>
+          </div>
+
+          <div class="form-container">
+            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="554ed210-2971-429a-8984-1656bc4f3f58">
+              <input type="hidden" name="subject" value="ByLeagues portfolio yeni iletişim mesajı">
+              <input type="hidden" name="from_name" value="ByLeagues Portfolio">
+              <input type="hidden" name="redirect" value="https://byleagues.github.io/?message=sent#quick-contact">
+              <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+
+              <div class="form-group">
+                <label for="contact-name">İsim</label>
+                <input id="contact-name" name="name" type="text" placeholder="Adın veya marka adın" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Mail Adresi</label>
+                <input id="contact-email" name="email" type="email" placeholder="ornek@mail.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Proje / Yorum</label>
+                <textarea id="contact-message" name="message" placeholder="Nasıl bir proje için çalışmak istiyorsun?" required></textarea>
+              </div>
+
+              <button class="form-submit-btn" type="submit">Mailime Gönder</button>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -374,47 +412,9 @@
             <a href="#about"><span>▣</span>Profil</a>
             <a href="#experience"><span>◎</span>Yer Aldığım Projeler</a>
             <a href="#process"><span>◇</span>Çalışma Süreci</a>
-            <a href="#contact"><span>✉</span>İletişim</a>
+            <a href="#quick-contact"><span>✉</span>Hızlı İletişim</a>
           </div>
         </nav>
-      </div>
-
-      <div class="footer-contact-panel reveal">
-        <div class="contact-form-copy">
-          <p class="eyebrow">Hızlı İletişim</p>
-          <h2>Birlikte çalışmak ister misin?</h2>
-          <p>
-            Projeni ya da yorumunu kısaca gönder. Mesajın direkt
-            <strong>ysfakyrek.23@gmail.com</strong> adresime düşsün.
-          </p>
-        </div>
-
-        <div class="form-container">
-          <form class="form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="554ed210-2971-429a-8984-1656bc4f3f58">
-            <input type="hidden" name="subject" value="ByLeagues portfolio yeni iletişim mesajı">
-            <input type="hidden" name="from_name" value="ByLeagues Portfolio">
-            <input type="hidden" name="redirect" value="https://byleagues.github.io/?message=sent#contact">
-            <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
-
-            <div class="form-group">
-              <label for="contact-name">İsim</label>
-              <input id="contact-name" name="name" type="text" placeholder="Adın veya marka adın" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-email">Mail Adresi</label>
-              <input id="contact-email" name="email" type="email" placeholder="ornek@mail.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-message">Proje / Yorum</label>
-              <textarea id="contact-message" name="message" placeholder="Nasıl bir proje için çalışmak istiyorsun?" required></textarea>
-            </div>
-
-            <button class="form-submit-btn" type="submit">Mailime Gönder</button>
-          </form>
-        </div>
       </div>
 
       <div class="footer-bottom">
@@ -486,6 +486,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260516-4"></script>
+  <script src="script.js?v=20260516-5"></script>
 </body>
 </html>
