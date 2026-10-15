@@ -22,7 +22,7 @@ const setupThemeToggle = () => {
       root.removeAttribute("data-theme");
     }
     themeToggle.setAttribute("aria-pressed", String(theme === "light"));
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#F7F9F8" : "#111719");
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#f3f6f7" : "#14191c");
   };
 
   let storedTheme = null;
