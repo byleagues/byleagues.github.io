@@ -6,6 +6,26 @@ const backToTopButton = document.querySelector("[data-back-to-top]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const t = (key) => (window.i18n ? window.i18n.t(key) : key);
 
+const setupExpertiseSpotlight = () => {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  document.querySelectorAll(".expertise-item").forEach(card => {
+    let bounds;
+    const updatePosition = event => {
+      if (prefersReducedMotion.matches || !bounds) return;
+      card.style.setProperty("--mouse-x", `${event.clientX - bounds.left}px`);
+      card.style.setProperty("--mouse-y", `${event.clientY - bounds.top}px`);
+    };
+
+    card.addEventListener("pointerenter", event => {
+      bounds = card.getBoundingClientRect();
+      updatePosition(event);
+    });
+    card.addEventListener("pointermove", updatePosition);
+    card.addEventListener("pointerleave", () => { bounds = null; });
+  });
+};
+
 
 const THEME_STORAGE_KEY = "byleagues-theme";
 
@@ -398,6 +418,7 @@ const setupDiscordCard = () => {
 };
 
 setupThemeToggle();
+setupExpertiseSpotlight();
 setupScrollProgress();
 setupBackToTop();
 setupNavbar();
